@@ -1,9 +1,22 @@
 export class ValidationMail {
 
     verifyString(email:string):boolean {
-        if(email.includes("."))return true;
+        if(this.verifyDot(email))return true;
 
         return email.includes("@");
         
+    }
+
+    verifyDot(email:string):boolean {
+
+        if(!email.includes(".")){
+            return false;
+        }
+
+        if(email.endsWith(".")){
+            return false;
+        }
+
+        return true;
     }
 }

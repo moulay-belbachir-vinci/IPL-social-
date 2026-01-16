@@ -17,10 +17,17 @@ describe('Validation Email', ()=>{
         it("should return true if the email contain . ", ()=> {
 
 
-            const actual = validationMail.verifyString(".");
+            const actual = validationMail.verifyString("aaaa.aaaa");
 
             expect(actual).toBe(true);
         })
+
+        it("should return false if the email end with .", ()=>{
+
+            const actual = validationMail.verifyString("gggg.");
+
+            expect(actual).toBe(false);
+        });
         
     })
 })
