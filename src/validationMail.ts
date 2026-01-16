@@ -1,11 +1,8 @@
 export class ValidationMail {
 
     verifyString(email:string):boolean {
-        if(this.verifyDot(email) && this.verifySpace(email) && this.verifyTextBeforeAndAfter(email)){
-            return true;
-        }
 
-        return email.includes("@");
+        return this.verifyDot(email) && this.verifySpace(email) && this.verifyTextBeforeAndAfter(email);
         
     }
 
