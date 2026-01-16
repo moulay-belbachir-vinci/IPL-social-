@@ -6,13 +6,6 @@ describe('Validation Email', ()=>{
     describe('validate an email', ()=> {
         const validationMail = new ValidationMail;
 
-        it("should return true if the email contain @ ", ()=> {
-
-
-            const actual = validationMail.verifyString("@");
-
-            expect(actual).toBe(true);
-        })
 
         it("should return true if the email contain . ", ()=> {
 
@@ -44,6 +37,12 @@ describe('Validation Email', ()=>{
             expect(actual).toBe(false);
 
         });
+
+        it("should return true if the email is good", ()=> {
+            const actual = validationMail.verifyString("moulay.belbachir@student.vinci.be");
+
+            expect(actual).toBe(true);
+        })
 
         
     })
