@@ -1,7 +1,9 @@
 export class ValidationMail {
 
     verifyString(email:string):boolean {
-        if(this.verifyDot(email) && this.verifySpace(email))return true;
+        if(this.verifyDot(email) && this.verifySpace(email) && this.verifyTextBeforeAndAfter(email)){
+            return true;
+        }
 
         return email.includes("@");
         
@@ -25,5 +27,10 @@ export class ValidationMail {
             return false;
         }
         return true;
+    }
+
+    verifyTextBeforeAndAfter(email:string):boolean {
+        const texts = email.split("@");
+        return texts.length ==2 && texts[0].length > 0 && texts[1].length > 0;
     }
 }

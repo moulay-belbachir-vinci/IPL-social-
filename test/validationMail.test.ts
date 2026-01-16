@@ -17,25 +17,34 @@ describe('Validation Email', ()=>{
         it("should return true if the email contain . ", ()=> {
 
 
-            const actual = validationMail.verifyString("aaaa.aaaa");
+            const actual = validationMail.verifyDot("aaaa.aaaa");
 
             expect(actual).toBe(true);
         })
 
         it("should return false if the email end with .", ()=>{
 
-            const actual = validationMail.verifyString("gggg.");
+            const actual = validationMail.verifyDot("gggg.");
 
             expect(actual).toBe(false);
         });
 
-        it("should return false it there is space in the string", ()=> {
+        it("should return false if there is space in the string", ()=> {
 
-            const actual = validationMail.verifyString("ggg gggg.ggg");
+            const actual = validationMail.verifySpace("ggg gggg.ggg");
 
             expect(actual).toBe(false);
 
         });
+        
+        it("should return false if there is no text before the @", ()=> {
+
+            const actual = validationMail.verifyTextBeforeAndAfter("@.ggggg");
+
+            expect(actual).toBe(false);
+
+        });
+
         
     })
 })
