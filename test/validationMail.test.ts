@@ -28,6 +28,14 @@ describe('Validation Email', ()=>{
 
             expect(actual).toBe(false);
         });
+
+        it("should return false it there is space in the string", ()=> {
+
+            const actual = validationMail.verifyString("ggg gggg.ggg");
+
+            expect(actual).toBe(false);
+
+        });
         
     })
 })
