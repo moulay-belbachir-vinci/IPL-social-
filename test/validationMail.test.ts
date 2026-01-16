@@ -4,10 +4,10 @@ import { ValidationMail } from "../src/validationMail";
 describe('Validation Email', ()=>{
 
     describe('validate an email', ()=> {
+        const validationMail = new ValidationMail;
 
         it("should return true if the email contain @ ", ()=> {
 
-            const validationMail = new ValidationMail;
 
             const actual = validationMail.verifyString("@");
 
