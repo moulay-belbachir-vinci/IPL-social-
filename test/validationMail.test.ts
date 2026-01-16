@@ -13,6 +13,14 @@ describe('Validation Email', ()=>{
 
             expect(actual).toBe(true);
         })
+
+        it("should return true if the email contain . ", ()=> {
+
+
+            const actual = validationMail.verifyString(".");
+
+            expect(actual).toBe(true);
+        })
         
     })
 })
